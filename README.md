@@ -1,0 +1,1 @@
+### ES6 Babel compile test
