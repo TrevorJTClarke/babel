@@ -1,37 +1,3 @@
-// /* ES6 Feature tests */
-// // console.log("HEllo!")
-
-// var nwFn = (f => {
-// 	// console.log("F:", f)
-// })
-
-// nwFn("this is nwFn!")
-
-// var evens = [2,4,6,8,10,12,14,16,18,20]
-// var nums = evens.map((v, i) => v + i)
-// var fives = []
-
-// // Statement bodies
-// nums.forEach(v => {
-// 	if (v % 5 === 0)
-//     	fives.push(v)
-//     	nwFn(v)
-// });
-// console.log(fives)
-// var s = new Set();
-// s.add("hello") // Strings
-//  .add({"data": "hiii data"}) // Objects
-//  .add(["First", "Second"])
-// // s.add("hello").add("goodbye").add("hello").add({"data": "hiii data"})
-// s.size === 2;
-// s.has("hello") === true;
-// console.log(s.size)
-// // console.log(s)
-// // console.log(s.has("hello"))
-// // console.log(s.keys())
-// // console.log(s.entries())
-// // console.log(s.delete("hello"))
-// // console.log(s.has("hello"))
 /* ES6 Timer */
 class Timer {
 

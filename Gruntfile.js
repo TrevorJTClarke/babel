@@ -38,10 +38,14 @@ module.exports = function(grunt) {
         mochaTest: {
             test: {
                 options: {
-                    reporter: 'landing',
-                    require: 'coverage/blanket'
+                    reporter: 'spec',
+                    // require: 'coverage/blanket'
+                    require: ['dist/bab.min.js']
                 },
-                src: ['dist/bab.min.js']
+                // src: [
+                //     'dist/bab.min.js'
+                // ]
+                src: ['test/**/*.js']
             }
         }
     });
@@ -49,9 +53,9 @@ module.exports = function(grunt) {
     grunt.registerTask("default", ["babel"]);
 
     // test the codes
-    grunt.registerTask('test', [
-        // 'jasmine'
-    ]);
+    // grunt.registerTask('test', [
+    //     'mochaTest'
+    // ]);
 
     grunt.registerTask('dev', [
         'concat',
