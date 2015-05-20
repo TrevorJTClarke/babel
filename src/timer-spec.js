@@ -3,19 +3,19 @@ import {Timer} from './timer'
 describe('Timer Class', () => {
 
 	it('All Timer methods Exist', () => {
-    	let _T = new Timer();
-    	expect(_T).toBeDefined();
-    	expect(_T.constructor).toBeDefined();
-        expect(_T.tick).toBeDefined();
-        expect(_T.start).toBeDefined();
-        expect(_T.pause).toBeDefined();
-        expect(_T.resume).toBeDefined();
+    	let _T = new Timer()
+    	expect(_T).toBeDefined()
+    	expect(_T.constructor).toBeDefined()
+        expect(_T.tick).toBeDefined()
+        expect(_T.start).toBeDefined()
+        expect(_T.pause).toBeDefined()
+        expect(_T.resume).toBeDefined()
 	});
-   it('should have a default duration', () => {
+    it('should have a default duration', () => {
     	let _T = new Timer();
-    	let dur = _T.constructor().duration;
+    	let dur = _T.constructor(500).duration;
 		expect(dur).toBe(500);
-   });
+    });
    //  it('should subtract two numbers', () => {
    //      let calculator = new Calculator();
    //      let sum = calculator.subtract(4,1);

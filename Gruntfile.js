@@ -5,7 +5,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-babel');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-mocha-test');
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -22,7 +21,8 @@ module.exports = function(grunt) {
         concat: {
             main: {
                 src: [
-                    'src/**/*.js'
+                    'src/**/*.js',
+                    '!src/**/*-spec.js'
                 ],
                 dest: 'dist/bab.js'
             }
@@ -34,29 +34,10 @@ module.exports = function(grunt) {
                 ],
                 tasks: ['concat', 'babel']
             }
-        },
-        mochaTest: {
-            test: {
-                options: {
-                    reporter: 'spec',
-                    // require: 'coverage/blanket'
-                    require: ['dist/bab.min.js']
-                },
-                // src: [
-                //     'dist/bab.min.js'
-                // ]
-                src: ['test/**/*.js']
-            }
         }
     });
 
-    grunt.registerTask("default", ["babel"]);
-
-    // test the codes
-    // grunt.registerTask('test', [
-    //     'mochaTest'
-    // ]);
-
+    grunt.registerTask("default", ["dev"]);
     grunt.registerTask('dev', [
         'concat',
         'babel',
