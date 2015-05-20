@@ -1,5 +1,5 @@
 /* ES6 Timer */
-class Timer {
+export class Timer {
 
 	/**
 	 * Build the base of Timer
