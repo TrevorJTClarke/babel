@@ -10,12 +10,21 @@ describe('Timer Class', () => {
         expect(_T.start).toBeDefined()
         expect(_T.pause).toBeDefined()
         expect(_T.resume).toBeDefined()
-	});
-    it('should have a default duration', () => {
-    	let _T = new Timer();
-    	let dur = _T.constructor(500).duration;
-		expect(dur).toBe(500);
-    });
+	})
+    it('should have defaults', () => {
+    	let _T = new Timer()
+    		_T.constructor(500)
+    	let dur = _T.duration
+    	// let startTime = _T.startTime;
+		
+		expect(dur).toBe(500)
+		// expect(startTime).toBe((+new Date))
+    })
+    it('should iterate with tick method', () => {
+    	let _T = new Timer()
+		let time = _T.tick()
+		expect(time).toBe(1799000)
+    })
    //  it('should subtract two numbers', () => {
    //      let calculator = new Calculator();
    //      let sum = calculator.subtract(4,1);

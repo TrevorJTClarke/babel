@@ -4,7 +4,6 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Babel Tests</title>
-	<script src="dist/bab.min.js"></script>
 </head>
 <body>
 	Open the console :)
@@ -25,5 +24,18 @@
 			</svg>
 		</li>
 	</ul>
+	<script>
+	window.exports = window.exports || {};
+	</script>
+	<script src="node_modules/babel-core/browser-polyfill.min.js"></script>
+	<script src="dist/bab.min.js"></script>
+	<script>
+
+		var _t = new Timer();
+
+		console.log("timer instance:", _t);
+		_t.start();
+
+	</script>
 </body>
 </html>
