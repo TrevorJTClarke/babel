@@ -4,6 +4,28 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Babel Tests</title>
+
+<style>
+.timer {
+	display: inline-block;
+	list-style: none;
+	border: 1px solid #333;
+	border-radius: 3px;
+	padding: 8px 37px 8px 7px;
+	color: #333;
+	text-transform: uppercase;
+	position: relative;
+	font-size: 16px;
+	font-family: sans-serif;
+}
+.timer svg {
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	right: 0;
+	top: 2px;
+}
+</style>
 </head>
 <body>
 	Open the console :)
@@ -12,7 +34,7 @@
 	<ul>
 		<li class="timer">
 			<div id="countdown">30:00</div>
-			<svg version="1.1" id="timer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 443.022 511.494" style="enable-background:new 0 0 443.022 511.494;" xml:space="preserve">
+			<svg version="1.1" id="timerToggle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 443.022 511.494" style="enable-background:new 0 0 443.022 511.494;" xml:space="preserve">
 				<polygon id="timerBackground" style="fill:#292929;" points="221.564,505.721 5.054,380.78 5,130.808 221.457,5.773 437.967,130.714 438.021,380.687 "/>
 				<path id="timerBorder" style="fill:#3B3B3B;" d="M221.565,511.494L0.055,383.668L0,127.922L221.456,0l221.51,127.826l0.057,255.746L221.565,511.494z M10.054,377.893l211.509,122.055l211.458-122.146l-0.053-244.199L221.458,11.547L10.001,133.693L10.054,377.893z"/>
 				<g id="timerPause" style="display:none;">
@@ -34,8 +56,28 @@
 		var _t = new Timer();
 
 		console.log("timer instance:", _t);
-		_t.start();
+		_t.start("countdown", 3);
 
+		var counter = document.getElementById("timerToggle");
+		var playButton = document.getElementById("timerPlay");
+		var pauseButton = document.getElementById("timerPause");
+		var active = false;
+		
+		
+    	pauseButton.style.display = "block";
+    	playButton.style.display = "none";
+		counter.addEventListener("click",function(){
+            active = !active;
+            if(active){
+            	_t.pause();
+            	pauseButton.style.display = "none";
+            	playButton.style.display = "block";
+            } else {
+            	_t.resume();
+            	pauseButton.style.display = "block";
+            	playButton.style.display = "none";
+            }
+        },false);
 	</script>
 </body>
 </html>
